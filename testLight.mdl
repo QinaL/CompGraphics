@@ -1,0 +1,5 @@
+light hi 1.5 10 10 1.0 1.0 1.0 
+
+push
+sphere 250 250 250 50
+display

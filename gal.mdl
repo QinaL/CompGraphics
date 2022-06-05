@@ -1,0 +1,43 @@
+frames 120
+basename collide
+
+constants brass 0.329412 0.780392 0.992157 0.223529 0.568627 0.941176 0.027451 0.113725 0.807843
+constants shiny_teal 0.3 0.0 0.0 0.3 0.2 0.8 0.3 0.2 0.8
+constants green 0.1 0.1 0.1 0.6 0.6 0.8 0.1 0.2 0.2
+constants shiny_purple 0.3 0.2 0.8 0.3 0 0 0.3 0.2 0.8
+constants dull_yellow 0.3 0.8 0.2 0.3 0.8 0.2 0 0 0
+constants red 0.5 0.3 0.7 0.0 0.0 0.0 0.1 0.1 0.0
+
+push
+move 100 100 20 
+move 150 150 -20 sphereup
+sphere brass 0 0 0 50 
+pop
+push
+move 400 400 -20 
+move -150 -150 20 spheredown 
+sphere shiny_teal 0 0 0 50
+pop
+push
+move 250 250 0 
+scale 1 1 1 biggs
+sphere green 0 0 0 60
+push
+move 100 -100 -50 scatter1
+sphere shiny_purple 0 0 0 25
+pop
+push
+move 200 100 35 scatter2
+sphere dull_yellow 0 0 0 20
+pop
+push 
+move -150 50 0 scatter3
+sphere red 0 0 0 35
+
+vary sphereup 0 55 0 1
+vary spheredown 0 55 0 1
+vary biggs 55 119 1 2
+vary scatter1 57 119 0 1
+vary scatter2 57 119 0 1
+vary scatter3 76 119 0 1
+
