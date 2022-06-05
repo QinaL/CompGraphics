@@ -20,8 +20,13 @@ LOCATION = 0
 COLOR = 1
 SPECULAR_EXP = 4
 
+ONCE = False
+
 #lighting functions
 def get_lighting(normal, view, ambient, light, symbols, reflect ):
+
+    print(reflect)
+
 
     n = normal[:]
     normalize(n)
