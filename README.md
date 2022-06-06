@@ -4,7 +4,8 @@
 ### Class Period:
 ---
 ## New Graphics Engine Features
-
+- light mdl feature
+- set knobname value mdl feature
 
 ---
 ## The Details
