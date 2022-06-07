@@ -287,13 +287,16 @@ def p_command_vary(p):
 def p_command_knobs(p):
     """command : SET SYMBOL NUMBER
                | SET_KNOBS NUMBER"""
+    #print(p[1])
     cmd = {'op' : p[1], 'args' : [], 'knob' : None}
-    if p[1] == 'SET':
+    if p[1] == 'SET'or p[1] == 'set':
         cmd['knob'] = p[2]
         cmd['args'].append(p[3])
         symbols[p[2]] = p[3]
+        #print("here")
     else:
         cmd['args'].append(p[2])
+        #print("heree")
     commands.append(cmd)
 
 def p_command_ambient(p):

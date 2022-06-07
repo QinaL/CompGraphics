@@ -28,13 +28,13 @@ def get_lighting(normal, view, ambient, symbols, reflect):
     # print(view)
     #print(light)
     #print(normalize(light[LOCATION]))
-    
+
     #print(symbols)
 
     lights = []
     
     for symbol in symbols:
-        print(symbols[symbol])
+        #print(symbols[symbol])
         if symbols[symbol][0] == 'light':
             lights.append([symbols[symbol][1]['location'], symbols[symbol][1]['color']])
     #print(lights)

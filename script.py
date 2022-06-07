@@ -75,7 +75,11 @@ def second_pass( commands, num_frames ):
     for command in commands:
         op = command['op']
         if op == 'set':
-            print(op)
+            print(command)
+            knob = command['knob']
+            value = command['args'][0]
+            for i in range(num_frames):
+                frames[i][knob] = value
         if op == 'vary':
             knob = command['knob']
             args = command['args']
@@ -91,10 +95,11 @@ def second_pass( commands, num_frames ):
 
             diff = (endValue-startValue)/(endFrame-startFrame)
             
+            '''
             if knob in frames[startFrame-1].keys():
                 frames[startFrame][knob] = frames[startFrame-1][knob]
-            else: 
-                frames[startFrame][knob] = startValue
+            '''
+            frames[startFrame][knob] = startValue
             for x in range(startFrame+1, endFrame +1):
                 frames[x][knob] = frames[x-1][knob]+diff
     print(frames)
@@ -141,7 +146,7 @@ def run(filename):
     #print(name)
 
     for x in range(num_frames):
-        print(symbols)
+        #print(symbols)
         #print(frames)
         for knob in frames[x]:
             #print(knob)
