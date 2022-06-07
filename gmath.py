@@ -22,7 +22,7 @@ SPECULAR_EXP = 4
 
 
 #lighting functions
-def get_lighting(normal, view, ambient, light, symbols, reflect ):
+def get_lighting(normal, view, ambient, symbols, reflect ):
 
     # print(reflect)
     # print(view)
@@ -35,7 +35,11 @@ def get_lighting(normal, view, ambient, light, symbols, reflect ):
         print(symbols[symbol])
         if symbols[symbol][0] == 'light':
             lights.append([symbols[symbol][1]['location'], symbols[symbol][1]['color']])
-    print(lights)
+    #print(lights)
+
+    # default light if none specified 
+    if len(lights) == 0:
+        lights.append([[0.5, 0.75, 1], [255, 255, 255]])
 
     n = normal[:]
     normalize(n)
