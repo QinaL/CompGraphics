@@ -1,7 +1,7 @@
 # Graphics Final Project
-### Name: YOUR NAME HERE
+### Name: Qina Liu
 ### Partner name: IF APPLICABLE
-### Class Period:
+### Class Period: 4
 ---
 ## New Graphics Engine Features
 - light mdl feature
