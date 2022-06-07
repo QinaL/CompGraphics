@@ -27,7 +27,7 @@ def first_pass( commands ):
     ifFrames = False
     ifVary = False
 
-    #print(commands)
+    print(commands)
     for command in commands:
         op = command['op']
         if op == 'frames': 
@@ -36,10 +36,13 @@ def first_pass( commands ):
         if op == 'basename':
             name = command['args'][0]
         if op == 'vary':
-            vary = True
+            ifVary = True
+
+    #print(ifVary, ifFrames) 
 
     if ifVary and name == '':
-        print("warning: empty basename")
+        print("warning: empty basename, defaulted to anim")
+        name = "anim"
 
     if ifVary and not ifFrames:
         raise Exception('vary but no frames')
@@ -71,6 +74,8 @@ def second_pass( commands, num_frames ):
 
     for command in commands:
         op = command['op']
+        if op == 'set':
+            print(op)
         if op == 'vary':
             knob = command['knob']
             args = command['args']
@@ -130,24 +135,18 @@ def run(filename):
                           'blue': [0.2, 0.5, 0.5]}]
     reflect = '.white'
     print(symbols)
-    # if a knob is not set in frame 0, it will have a value of ['knob', 0] in symbol table
-    for symbol in symbols:
-        #print(symbol)
-        #print(symbols[symbol])
-        if symbols[symbol] == ['knob', 0]:
-            symbols[symbol] = 0
 
     (name, num_frames) = first_pass(commands)
     frames = second_pass(commands, num_frames)
     #print(name)
 
     for x in range(num_frames):
-        #print(symbols)
+        print(symbols)
         #print(frames)
         for knob in frames[x]:
             #print(knob)
             #print(frames[x])
-            symbols[knob] = frames[x][knob]
+            symbols[knob][1] = frames[x][knob]
             #print(frames[x][knob])
         #print(symbols)
 
@@ -207,7 +206,7 @@ def run(filename):
             elif c == 'move':
                 knob = command['knob']
                 if knob != None:
-                    knob_value = symbols[knob]
+                    knob_value = symbols[knob][1]
                 tmp = make_translate(args[0]*knob_value, args[1]*knob_value, args[2]*knob_value)
                 matrix_mult(stack[-1], tmp)
                 stack[-1] = [x[:] for x in tmp]
@@ -215,7 +214,7 @@ def run(filename):
             elif c == 'scale':
                 knob = command['knob']
                 if knob != None:
-                    knob_value = symbols[knob]
+                    knob_value = symbols[knob][1]
                 #print(symbols)
                 #print("scale: " + str(knob_value))
                 tmp = make_scale(args[0]*knob_value, args[1]*knob_value, args[2]*knob_value)
@@ -225,7 +224,7 @@ def run(filename):
             elif c == 'rotate':
                 knob = command['knob']
                 if knob != None:
-                    knob_value = symbols[knob]
+                    knob_value = symbols[knob][1]
                 theta = args[1] * (math.pi/180) * knob_value
                 if args[0] == 'x':
                     tmp = make_rotX(theta)

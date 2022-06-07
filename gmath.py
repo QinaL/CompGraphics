@@ -22,15 +22,17 @@ SPECULAR_EXP = 4
 
 
 #lighting functions
-def get_lighting(normal, view, ambient, symbols, reflect ):
+def get_lighting(normal, view, ambient, symbols, reflect):
 
     # print(reflect)
     # print(view)
     #print(light)
     #print(normalize(light[LOCATION]))
+    
+    #print(symbols)
 
     lights = []
-
+    
     for symbol in symbols:
         print(symbols[symbol])
         if symbols[symbol][0] == 'light':
