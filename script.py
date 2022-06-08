@@ -78,8 +78,22 @@ def second_pass( commands, num_frames ):
             print(command)
             knob = command['knob']
             value = command['args'][0]
-            for i in range(num_frames):
-                frames[i][knob] = value
+            specFrames = []
+            if len(command['args']) >= 2:
+                specFrames.append(int(command['args'][1]))
+            if len(command['args']) >= 3:
+                specFrames.append(int(command['args'][2]))
+            # no specifications on frame, apply to all
+            if len(specFrames) == 0: 
+                for i in range(num_frames):
+                    frames[i][knob] = value
+            # specific frame applied
+            elif len(specFrames) == 1: 
+                frames[specFrames[0]][knob] = value
+            # specific range
+            else: 
+                for i in range(specFrames[0], specFrames[1]):
+                    frames[i][knob] = value
         if op == 'vary':
             knob = command['knob']
             args = command['args']
@@ -139,7 +153,7 @@ def run(filename):
                           'green': [0.2, 0.5, 0.5],
                           'blue': [0.2, 0.5, 0.5]}]
     reflect = '.white'
-    print(symbols)
+    #print(symbols)
 
     (name, num_frames) = first_pass(commands)
     frames = second_pass(commands, num_frames)

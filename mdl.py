@@ -286,6 +286,8 @@ def p_command_vary(p):
 
 def p_command_knobs(p):
     """command : SET SYMBOL NUMBER
+               | SET SYMBOL NUMBER NUMBER
+               | SET SYMBOL NUMBER NUMBER NUMBER
                | SET_KNOBS NUMBER"""
     #print(p[1])
     cmd = {'op' : p[1], 'args' : [], 'knob' : None}
@@ -294,6 +296,10 @@ def p_command_knobs(p):
         cmd['args'].append(p[3])
         symbols[p[2]] = p[3]
         #print("here")
+        if len(p) >= 5:
+            cmd['args'].append(p[4])
+        if len(p) >= 6:
+            cmd['args'].append(p[5])
     else:
         cmd['args'].append(p[2])
         #print("heree")

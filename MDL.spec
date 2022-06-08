@@ -75,7 +75,9 @@ basename name		- sets the base filename to save under.
 			  if "name" is R, then tween or vary might
 			  save the images r01.miff, r02.miff etc.
 
-set knobname value	- sets a knobs value (in the symbol table).
+set knobname value [frame frame] - sets a knobs value (in the symbol table)
+									in specified frame or specified frame range 
+									or all frames not varied if unspecified.
 
 save_knobs knoblist	- saves the current values of all knobs
 			  under the name "knoblist."
