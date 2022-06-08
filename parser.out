@@ -2,6 +2,7 @@ Created by PLY version 3.11 (http://www.dabeaz.com/ply)
 
 Unused terminals:
 
+    GRADIENT
     INT
 
 Grammar
@@ -58,67 +59,69 @@ Rule 48    command -> AMBIENT NUMBER NUMBER NUMBER
 Rule 49    command -> CONSTANTS SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
 Rule 50    command -> CONSTANTS SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
 Rule 51    command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
-Rule 52    command -> SHADING SHADING_TYPE
-Rule 53    command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
-Rule 54    command -> GENERATE_RAYFILES
-Rule 55    command -> MESH CO TEXT
-Rule 56    command -> MESH SYMBOL CO TEXT
-Rule 57    command -> MESH CO TEXT SYMBOL
-Rule 58    command -> MESH SYMBOL CO TEXT SYMBOL
-Rule 59    command -> SAVE_KNOBS SYMBOL
-Rule 60    command -> SAVE_COORDS SYMBOL
-Rule 61    command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL
-Rule 62    command -> FOCAL NUMBER
-Rule 63    command -> WEB
-Rule 64    command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
+Rule 52    command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL
+Rule 53    command -> SHADING SHADING_TYPE
+Rule 54    command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
+Rule 55    command -> GENERATE_RAYFILES
+Rule 56    command -> MESH CO TEXT
+Rule 57    command -> MESH SYMBOL CO TEXT
+Rule 58    command -> MESH CO TEXT SYMBOL
+Rule 59    command -> MESH SYMBOL CO TEXT SYMBOL
+Rule 60    command -> SAVE_KNOBS SYMBOL
+Rule 61    command -> SAVE_COORDS SYMBOL
+Rule 62    command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL
+Rule 63    command -> FOCAL NUMBER
+Rule 64    command -> WEB
+Rule 65    command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
 
 Terminals, with rules where they appear
 
 AMBIENT              : 48
 BASENAME             : 42
 BOX                  : 23 24 25 26
-CAMERA               : 53
-CO                   : 55 56 57 58
+CAMERA               : 54
+CO                   : 56 57 58 59
 COMMENT              : 3
 CONSTANTS            : 49 50
 DISPLAY              : 14
 DOUBLE               : 8
-FOCAL                : 62
+FOCAL                : 63
 FRAMES               : 41
-GENERATE_RAYFILES    : 54
+GENERATE_RAYFILES    : 55
+GRADIENT             : 
 ID                   : 5
 INT                  : 
-LIGHT                : 51
+LIGHT                : 51 52
 LINE                 : 27 28 29 30 31 32 33 34
-MESH                 : 55 56 57 58
+MESH                 : 56 57 58 59
 MOVE                 : 35 36
 POP                  : 9
 PUSH                 : 10
 ROTATE               : 39 40
 SAVE                 : 13
-SAVE_COORDS          : 60
-SAVE_KNOBS           : 59
+SAVE_COORDS          : 61
+SAVE_KNOBS           : 60
 SCALE                : 37 38
 SCREEN               : 11 12
 SET                  : 44 45 46
 SET_KNOBS            : 47
-SHADING              : 52
-SHADING_TYPE         : 52
+SHADING              : 53
+SHADING_TYPE         : 53
 SPHERE               : 15 16 17 18
 STRING               : 7
-TEXTURE              : 64
+TEXTURE              : 65
 TORUS                : 19 20 21 22
-TWEEN                : 61
+TWEEN                : 62
 VARY                 : 43
-WEB                  : 63
+WEB                  : 64
 XYZ                  : 4 39 40
 error                : 
 
 Nonterminals, with rules where they appear
 
-NUMBER               : 11 11 15 15 15 15 16 16 16 16 17 17 17 17 18 18 18 18 19 19 19 19 19 20 20 20 20 20 21 21 21 21 21 22 22 22 22 22 23 23 23 23 23 23 24 24 24 24 24 24 25 25 25 25 25 25 26 26 26 26 26 26 27 27 27 27 27 27 28 28 28 28 28 28 29 29 29 29 29 29 30 30 30 30 30 30 31 31 31 31 31 31 32 32 32 32 32 32 33 33 33 33 33 33 34 34 34 34 34 34 35 35 35 36 36 36 37 37 37 38 38 38 39 40 41 43 43 43 43 44 45 45 46 46 46 47 48 48 48 49 49 49 49 49 49 49 49 49 50 50 50 50 50 50 50 50 50 50 50 50 51 51 51 51 51 51 53 53 53 53 53 53 61 61 62 64 64 64 64 64 64 64 64 64 64 64 64
-SYMBOL               : 6 16 17 18 18 20 21 22 22 24 25 26 26 28 29 30 30 31 32 32 33 33 34 34 34 35 37 39 43 44 45 46 49 50 51 56 57 58 58 59 60 61 61 64
-TEXT                 : 13 13 42 55 56 57 58
+NUMBER               : 11 11 15 15 15 15 16 16 16 16 17 17 17 17 18 18 18 18 19 19 19 19 19 20 20 20 20 20 21 21 21 21 21 22 22 22 22 22 23 23 23 23 23 23 24 24 24 24 24 24 25 25 25 25 25 25 26 26 26 26 26 26 27 27 27 27 27 27 28 28 28 28 28 28 29 29 29 29 29 29 30 30 30 30 30 30 31 31 31 31 31 31 32 32 32 32 32 32 33 33 33 33 33 33 34 34 34 34 34 34 35 35 35 36 36 36 37 37 37 38 38 38 39 40 41 43 43 43 43 44 45 45 46 46 46 47 48 48 48 49 49 49 49 49 49 49 49 49 50 50 50 50 50 50 50 50 50 50 50 50 51 51 51 51 51 51 52 52 52 52 52 52 54 54 54 54 54 54 62 62 63 65 65 65 65 65 65 65 65 65 65 65 65
+SYMBOL               : 6 16 17 18 18 20 21 22 22 24 25 26 26 28 29 30 30 31 32 32 33 33 34 34 34 35 37 39 43 44 45 46 49 50 51 52 52 57 58 59 59 60 61 62 62 65
+TEXT                 : 13 13 42 56 57 58 59
 command              : 2
 input                : 2 0
 
@@ -173,19 +176,20 @@ state 0
     (49) command -> . CONSTANTS SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
     (50) command -> . CONSTANTS SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
     (51) command -> . LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
-    (52) command -> . SHADING SHADING_TYPE
-    (53) command -> . CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
-    (54) command -> . GENERATE_RAYFILES
-    (55) command -> . MESH CO TEXT
-    (56) command -> . MESH SYMBOL CO TEXT
-    (57) command -> . MESH CO TEXT SYMBOL
-    (58) command -> . MESH SYMBOL CO TEXT SYMBOL
-    (59) command -> . SAVE_KNOBS SYMBOL
-    (60) command -> . SAVE_COORDS SYMBOL
-    (61) command -> . TWEEN NUMBER NUMBER SYMBOL SYMBOL
-    (62) command -> . FOCAL NUMBER
-    (63) command -> . WEB
-    (64) command -> . TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
+    (52) command -> . LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL
+    (53) command -> . SHADING SHADING_TYPE
+    (54) command -> . CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
+    (55) command -> . GENERATE_RAYFILES
+    (56) command -> . MESH CO TEXT
+    (57) command -> . MESH SYMBOL CO TEXT
+    (58) command -> . MESH CO TEXT SYMBOL
+    (59) command -> . MESH SYMBOL CO TEXT SYMBOL
+    (60) command -> . SAVE_KNOBS SYMBOL
+    (61) command -> . SAVE_COORDS SYMBOL
+    (62) command -> . TWEEN NUMBER NUMBER SYMBOL SYMBOL
+    (63) command -> . FOCAL NUMBER
+    (64) command -> . WEB
+    (65) command -> . TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
 
     $end            reduce using rule 1 (input -> .)
     COMMENT         shift and go to state 3
@@ -278,19 +282,20 @@ state 2
     (49) command -> . CONSTANTS SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
     (50) command -> . CONSTANTS SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
     (51) command -> . LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
-    (52) command -> . SHADING SHADING_TYPE
-    (53) command -> . CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
-    (54) command -> . GENERATE_RAYFILES
-    (55) command -> . MESH CO TEXT
-    (56) command -> . MESH SYMBOL CO TEXT
-    (57) command -> . MESH CO TEXT SYMBOL
-    (58) command -> . MESH SYMBOL CO TEXT SYMBOL
-    (59) command -> . SAVE_KNOBS SYMBOL
-    (60) command -> . SAVE_COORDS SYMBOL
-    (61) command -> . TWEEN NUMBER NUMBER SYMBOL SYMBOL
-    (62) command -> . FOCAL NUMBER
-    (63) command -> . WEB
-    (64) command -> . TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
+    (52) command -> . LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL
+    (53) command -> . SHADING SHADING_TYPE
+    (54) command -> . CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
+    (55) command -> . GENERATE_RAYFILES
+    (56) command -> . MESH CO TEXT
+    (57) command -> . MESH SYMBOL CO TEXT
+    (58) command -> . MESH CO TEXT SYMBOL
+    (59) command -> . MESH SYMBOL CO TEXT SYMBOL
+    (60) command -> . SAVE_KNOBS SYMBOL
+    (61) command -> . SAVE_COORDS SYMBOL
+    (62) command -> . TWEEN NUMBER NUMBER SYMBOL SYMBOL
+    (63) command -> . FOCAL NUMBER
+    (64) command -> . WEB
+    (65) command -> . TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
 
     $end            reduce using rule 1 (input -> .)
     COMMENT         shift and go to state 3
@@ -718,6 +723,7 @@ state 22
 state 23
 
     (51) command -> LIGHT . SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
+    (52) command -> LIGHT . SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL
     (4) SYMBOL -> . XYZ
     (5) SYMBOL -> . ID
 
@@ -728,14 +734,14 @@ state 23
 
 state 24
 
-    (52) command -> SHADING . SHADING_TYPE
+    (53) command -> SHADING . SHADING_TYPE
 
     SHADING_TYPE    shift and go to state 61
 
 
 state 25
 
-    (53) command -> CAMERA . NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
+    (54) command -> CAMERA . NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
     (8) NUMBER -> . DOUBLE
 
     DOUBLE          shift and go to state 36
@@ -744,48 +750,48 @@ state 25
 
 state 26
 
-    (54) command -> GENERATE_RAYFILES .
+    (55) command -> GENERATE_RAYFILES .
 
-    COMMENT         reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    POP             reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    PUSH            reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    SCREEN          reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    SAVE            reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    DISPLAY         reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    SPHERE          reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    TORUS           reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    BOX             reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    LINE            reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    MOVE            reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    SCALE           reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    ROTATE          reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    FRAMES          reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    BASENAME        reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    VARY            reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    SET             reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    SET_KNOBS       reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    AMBIENT         reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    CONSTANTS       reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    LIGHT           reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    SHADING         reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    CAMERA          reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    GENERATE_RAYFILES reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    MESH            reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    SAVE_KNOBS      reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    SAVE_COORDS     reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    TWEEN           reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    FOCAL           reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    WEB             reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    TEXTURE         reduce using rule 54 (command -> GENERATE_RAYFILES .)
-    $end            reduce using rule 54 (command -> GENERATE_RAYFILES .)
+    COMMENT         reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    POP             reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    PUSH            reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    SCREEN          reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    SAVE            reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    DISPLAY         reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    SPHERE          reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    TORUS           reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    BOX             reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    LINE            reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    MOVE            reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    SCALE           reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    ROTATE          reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    FRAMES          reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    BASENAME        reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    VARY            reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    SET             reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    SET_KNOBS       reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    AMBIENT         reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    CONSTANTS       reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    LIGHT           reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    SHADING         reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    CAMERA          reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    GENERATE_RAYFILES reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    MESH            reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    SAVE_KNOBS      reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    SAVE_COORDS     reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    TWEEN           reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    FOCAL           reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    WEB             reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    TEXTURE         reduce using rule 55 (command -> GENERATE_RAYFILES .)
+    $end            reduce using rule 55 (command -> GENERATE_RAYFILES .)
 
 
 state 27
 
-    (55) command -> MESH . CO TEXT
-    (56) command -> MESH . SYMBOL CO TEXT
-    (57) command -> MESH . CO TEXT SYMBOL
-    (58) command -> MESH . SYMBOL CO TEXT SYMBOL
+    (56) command -> MESH . CO TEXT
+    (57) command -> MESH . SYMBOL CO TEXT
+    (58) command -> MESH . CO TEXT SYMBOL
+    (59) command -> MESH . SYMBOL CO TEXT SYMBOL
     (4) SYMBOL -> . XYZ
     (5) SYMBOL -> . ID
 
@@ -797,7 +803,7 @@ state 27
 
 state 28
 
-    (59) command -> SAVE_KNOBS . SYMBOL
+    (60) command -> SAVE_KNOBS . SYMBOL
     (4) SYMBOL -> . XYZ
     (5) SYMBOL -> . ID
 
@@ -808,7 +814,7 @@ state 28
 
 state 29
 
-    (60) command -> SAVE_COORDS . SYMBOL
+    (61) command -> SAVE_COORDS . SYMBOL
     (4) SYMBOL -> . XYZ
     (5) SYMBOL -> . ID
 
@@ -819,7 +825,7 @@ state 29
 
 state 30
 
-    (61) command -> TWEEN . NUMBER NUMBER SYMBOL SYMBOL
+    (62) command -> TWEEN . NUMBER NUMBER SYMBOL SYMBOL
     (8) NUMBER -> . DOUBLE
 
     DOUBLE          shift and go to state 36
@@ -828,7 +834,7 @@ state 30
 
 state 31
 
-    (62) command -> FOCAL . NUMBER
+    (63) command -> FOCAL . NUMBER
     (8) NUMBER -> . DOUBLE
 
     DOUBLE          shift and go to state 36
@@ -837,45 +843,45 @@ state 31
 
 state 32
 
-    (63) command -> WEB .
+    (64) command -> WEB .
 
-    COMMENT         reduce using rule 63 (command -> WEB .)
-    POP             reduce using rule 63 (command -> WEB .)
-    PUSH            reduce using rule 63 (command -> WEB .)
-    SCREEN          reduce using rule 63 (command -> WEB .)
-    SAVE            reduce using rule 63 (command -> WEB .)
-    DISPLAY         reduce using rule 63 (command -> WEB .)
-    SPHERE          reduce using rule 63 (command -> WEB .)
-    TORUS           reduce using rule 63 (command -> WEB .)
-    BOX             reduce using rule 63 (command -> WEB .)
-    LINE            reduce using rule 63 (command -> WEB .)
-    MOVE            reduce using rule 63 (command -> WEB .)
-    SCALE           reduce using rule 63 (command -> WEB .)
-    ROTATE          reduce using rule 63 (command -> WEB .)
-    FRAMES          reduce using rule 63 (command -> WEB .)
-    BASENAME        reduce using rule 63 (command -> WEB .)
-    VARY            reduce using rule 63 (command -> WEB .)
-    SET             reduce using rule 63 (command -> WEB .)
-    SET_KNOBS       reduce using rule 63 (command -> WEB .)
-    AMBIENT         reduce using rule 63 (command -> WEB .)
-    CONSTANTS       reduce using rule 63 (command -> WEB .)
-    LIGHT           reduce using rule 63 (command -> WEB .)
-    SHADING         reduce using rule 63 (command -> WEB .)
-    CAMERA          reduce using rule 63 (command -> WEB .)
-    GENERATE_RAYFILES reduce using rule 63 (command -> WEB .)
-    MESH            reduce using rule 63 (command -> WEB .)
-    SAVE_KNOBS      reduce using rule 63 (command -> WEB .)
-    SAVE_COORDS     reduce using rule 63 (command -> WEB .)
-    TWEEN           reduce using rule 63 (command -> WEB .)
-    FOCAL           reduce using rule 63 (command -> WEB .)
-    WEB             reduce using rule 63 (command -> WEB .)
-    TEXTURE         reduce using rule 63 (command -> WEB .)
-    $end            reduce using rule 63 (command -> WEB .)
+    COMMENT         reduce using rule 64 (command -> WEB .)
+    POP             reduce using rule 64 (command -> WEB .)
+    PUSH            reduce using rule 64 (command -> WEB .)
+    SCREEN          reduce using rule 64 (command -> WEB .)
+    SAVE            reduce using rule 64 (command -> WEB .)
+    DISPLAY         reduce using rule 64 (command -> WEB .)
+    SPHERE          reduce using rule 64 (command -> WEB .)
+    TORUS           reduce using rule 64 (command -> WEB .)
+    BOX             reduce using rule 64 (command -> WEB .)
+    LINE            reduce using rule 64 (command -> WEB .)
+    MOVE            reduce using rule 64 (command -> WEB .)
+    SCALE           reduce using rule 64 (command -> WEB .)
+    ROTATE          reduce using rule 64 (command -> WEB .)
+    FRAMES          reduce using rule 64 (command -> WEB .)
+    BASENAME        reduce using rule 64 (command -> WEB .)
+    VARY            reduce using rule 64 (command -> WEB .)
+    SET             reduce using rule 64 (command -> WEB .)
+    SET_KNOBS       reduce using rule 64 (command -> WEB .)
+    AMBIENT         reduce using rule 64 (command -> WEB .)
+    CONSTANTS       reduce using rule 64 (command -> WEB .)
+    LIGHT           reduce using rule 64 (command -> WEB .)
+    SHADING         reduce using rule 64 (command -> WEB .)
+    CAMERA          reduce using rule 64 (command -> WEB .)
+    GENERATE_RAYFILES reduce using rule 64 (command -> WEB .)
+    MESH            reduce using rule 64 (command -> WEB .)
+    SAVE_KNOBS      reduce using rule 64 (command -> WEB .)
+    SAVE_COORDS     reduce using rule 64 (command -> WEB .)
+    TWEEN           reduce using rule 64 (command -> WEB .)
+    FOCAL           reduce using rule 64 (command -> WEB .)
+    WEB             reduce using rule 64 (command -> WEB .)
+    TEXTURE         reduce using rule 64 (command -> WEB .)
+    $end            reduce using rule 64 (command -> WEB .)
 
 
 state 33
 
-    (64) command -> TEXTURE . SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
+    (65) command -> TEXTURE . SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
     (4) SYMBOL -> . XYZ
     (5) SYMBOL -> . ID
 
@@ -1394,6 +1400,7 @@ state 59
 state 60
 
     (51) command -> LIGHT SYMBOL . NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
+    (52) command -> LIGHT SYMBOL . NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL
     (8) NUMBER -> . DOUBLE
 
     DOUBLE          shift and go to state 36
@@ -1402,45 +1409,45 @@ state 60
 
 state 61
 
-    (52) command -> SHADING SHADING_TYPE .
+    (53) command -> SHADING SHADING_TYPE .
 
-    COMMENT         reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    POP             reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    PUSH            reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    SCREEN          reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    SAVE            reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    DISPLAY         reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    SPHERE          reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    TORUS           reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    BOX             reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    LINE            reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    MOVE            reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    SCALE           reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    ROTATE          reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    FRAMES          reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    BASENAME        reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    VARY            reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    SET             reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    SET_KNOBS       reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    AMBIENT         reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    CONSTANTS       reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    LIGHT           reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    SHADING         reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    CAMERA          reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    GENERATE_RAYFILES reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    MESH            reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    SAVE_KNOBS      reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    SAVE_COORDS     reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    TWEEN           reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    FOCAL           reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    WEB             reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    TEXTURE         reduce using rule 52 (command -> SHADING SHADING_TYPE .)
-    $end            reduce using rule 52 (command -> SHADING SHADING_TYPE .)
+    COMMENT         reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    POP             reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    PUSH            reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    SCREEN          reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    SAVE            reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    DISPLAY         reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    SPHERE          reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    TORUS           reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    BOX             reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    LINE            reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    MOVE            reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    SCALE           reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    ROTATE          reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    FRAMES          reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    BASENAME        reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    VARY            reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    SET             reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    SET_KNOBS       reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    AMBIENT         reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    CONSTANTS       reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    LIGHT           reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    SHADING         reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    CAMERA          reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    GENERATE_RAYFILES reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    MESH            reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    SAVE_KNOBS      reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    SAVE_COORDS     reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    TWEEN           reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    FOCAL           reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    WEB             reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    TEXTURE         reduce using rule 53 (command -> SHADING SHADING_TYPE .)
+    $end            reduce using rule 53 (command -> SHADING SHADING_TYPE .)
 
 
 state 62
 
-    (53) command -> CAMERA NUMBER . NUMBER NUMBER NUMBER NUMBER NUMBER
+    (54) command -> CAMERA NUMBER . NUMBER NUMBER NUMBER NUMBER NUMBER
     (8) NUMBER -> . DOUBLE
 
     DOUBLE          shift and go to state 36
@@ -1449,8 +1456,8 @@ state 62
 
 state 63
 
-    (55) command -> MESH CO . TEXT
-    (57) command -> MESH CO . TEXT SYMBOL
+    (56) command -> MESH CO . TEXT
+    (58) command -> MESH CO . TEXT SYMBOL
     (6) TEXT -> . SYMBOL
     (7) TEXT -> . STRING
     (4) SYMBOL -> . XYZ
@@ -1465,91 +1472,91 @@ state 63
 
 state 64
 
-    (56) command -> MESH SYMBOL . CO TEXT
-    (58) command -> MESH SYMBOL . CO TEXT SYMBOL
+    (57) command -> MESH SYMBOL . CO TEXT
+    (59) command -> MESH SYMBOL . CO TEXT SYMBOL
 
     CO              shift and go to state 90
 
 
 state 65
 
-    (59) command -> SAVE_KNOBS SYMBOL .
+    (60) command -> SAVE_KNOBS SYMBOL .
 
-    COMMENT         reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    POP             reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    PUSH            reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    SCREEN          reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    SAVE            reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    DISPLAY         reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    SPHERE          reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    TORUS           reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    BOX             reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    LINE            reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    MOVE            reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    SCALE           reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    ROTATE          reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    FRAMES          reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    BASENAME        reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    VARY            reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    SET             reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    SET_KNOBS       reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    AMBIENT         reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    CONSTANTS       reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    LIGHT           reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    SHADING         reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    CAMERA          reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    GENERATE_RAYFILES reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    MESH            reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    SAVE_KNOBS      reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    SAVE_COORDS     reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    TWEEN           reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    FOCAL           reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    WEB             reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    TEXTURE         reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
-    $end            reduce using rule 59 (command -> SAVE_KNOBS SYMBOL .)
+    COMMENT         reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    POP             reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    PUSH            reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    SCREEN          reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    SAVE            reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    DISPLAY         reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    SPHERE          reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    TORUS           reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    BOX             reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    LINE            reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    MOVE            reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    SCALE           reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    ROTATE          reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    FRAMES          reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    BASENAME        reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    VARY            reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    SET             reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    SET_KNOBS       reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    AMBIENT         reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    CONSTANTS       reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    LIGHT           reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    SHADING         reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    CAMERA          reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    GENERATE_RAYFILES reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    MESH            reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    SAVE_KNOBS      reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    SAVE_COORDS     reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    TWEEN           reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    FOCAL           reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    WEB             reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    TEXTURE         reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
+    $end            reduce using rule 60 (command -> SAVE_KNOBS SYMBOL .)
 
 
 state 66
 
-    (60) command -> SAVE_COORDS SYMBOL .
+    (61) command -> SAVE_COORDS SYMBOL .
 
-    COMMENT         reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    POP             reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    PUSH            reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    SCREEN          reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    SAVE            reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    DISPLAY         reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    SPHERE          reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    TORUS           reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    BOX             reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    LINE            reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    MOVE            reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    SCALE           reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    ROTATE          reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    FRAMES          reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    BASENAME        reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    VARY            reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    SET             reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    SET_KNOBS       reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    AMBIENT         reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    CONSTANTS       reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    LIGHT           reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    SHADING         reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    CAMERA          reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    GENERATE_RAYFILES reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    MESH            reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    SAVE_KNOBS      reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    SAVE_COORDS     reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    TWEEN           reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    FOCAL           reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    WEB             reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    TEXTURE         reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
-    $end            reduce using rule 60 (command -> SAVE_COORDS SYMBOL .)
+    COMMENT         reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    POP             reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    PUSH            reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    SCREEN          reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    SAVE            reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    DISPLAY         reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    SPHERE          reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    TORUS           reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    BOX             reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    LINE            reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    MOVE            reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    SCALE           reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    ROTATE          reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    FRAMES          reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    BASENAME        reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    VARY            reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    SET             reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    SET_KNOBS       reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    AMBIENT         reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    CONSTANTS       reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    LIGHT           reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    SHADING         reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    CAMERA          reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    GENERATE_RAYFILES reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    MESH            reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    SAVE_KNOBS      reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    SAVE_COORDS     reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    TWEEN           reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    FOCAL           reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    WEB             reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    TEXTURE         reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
+    $end            reduce using rule 61 (command -> SAVE_COORDS SYMBOL .)
 
 
 state 67
 
-    (61) command -> TWEEN NUMBER . NUMBER SYMBOL SYMBOL
+    (62) command -> TWEEN NUMBER . NUMBER SYMBOL SYMBOL
     (8) NUMBER -> . DOUBLE
 
     DOUBLE          shift and go to state 36
@@ -1558,45 +1565,45 @@ state 67
 
 state 68
 
-    (62) command -> FOCAL NUMBER .
+    (63) command -> FOCAL NUMBER .
 
-    COMMENT         reduce using rule 62 (command -> FOCAL NUMBER .)
-    POP             reduce using rule 62 (command -> FOCAL NUMBER .)
-    PUSH            reduce using rule 62 (command -> FOCAL NUMBER .)
-    SCREEN          reduce using rule 62 (command -> FOCAL NUMBER .)
-    SAVE            reduce using rule 62 (command -> FOCAL NUMBER .)
-    DISPLAY         reduce using rule 62 (command -> FOCAL NUMBER .)
-    SPHERE          reduce using rule 62 (command -> FOCAL NUMBER .)
-    TORUS           reduce using rule 62 (command -> FOCAL NUMBER .)
-    BOX             reduce using rule 62 (command -> FOCAL NUMBER .)
-    LINE            reduce using rule 62 (command -> FOCAL NUMBER .)
-    MOVE            reduce using rule 62 (command -> FOCAL NUMBER .)
-    SCALE           reduce using rule 62 (command -> FOCAL NUMBER .)
-    ROTATE          reduce using rule 62 (command -> FOCAL NUMBER .)
-    FRAMES          reduce using rule 62 (command -> FOCAL NUMBER .)
-    BASENAME        reduce using rule 62 (command -> FOCAL NUMBER .)
-    VARY            reduce using rule 62 (command -> FOCAL NUMBER .)
-    SET             reduce using rule 62 (command -> FOCAL NUMBER .)
-    SET_KNOBS       reduce using rule 62 (command -> FOCAL NUMBER .)
-    AMBIENT         reduce using rule 62 (command -> FOCAL NUMBER .)
-    CONSTANTS       reduce using rule 62 (command -> FOCAL NUMBER .)
-    LIGHT           reduce using rule 62 (command -> FOCAL NUMBER .)
-    SHADING         reduce using rule 62 (command -> FOCAL NUMBER .)
-    CAMERA          reduce using rule 62 (command -> FOCAL NUMBER .)
-    GENERATE_RAYFILES reduce using rule 62 (command -> FOCAL NUMBER .)
-    MESH            reduce using rule 62 (command -> FOCAL NUMBER .)
-    SAVE_KNOBS      reduce using rule 62 (command -> FOCAL NUMBER .)
-    SAVE_COORDS     reduce using rule 62 (command -> FOCAL NUMBER .)
-    TWEEN           reduce using rule 62 (command -> FOCAL NUMBER .)
-    FOCAL           reduce using rule 62 (command -> FOCAL NUMBER .)
-    WEB             reduce using rule 62 (command -> FOCAL NUMBER .)
-    TEXTURE         reduce using rule 62 (command -> FOCAL NUMBER .)
-    $end            reduce using rule 62 (command -> FOCAL NUMBER .)
+    COMMENT         reduce using rule 63 (command -> FOCAL NUMBER .)
+    POP             reduce using rule 63 (command -> FOCAL NUMBER .)
+    PUSH            reduce using rule 63 (command -> FOCAL NUMBER .)
+    SCREEN          reduce using rule 63 (command -> FOCAL NUMBER .)
+    SAVE            reduce using rule 63 (command -> FOCAL NUMBER .)
+    DISPLAY         reduce using rule 63 (command -> FOCAL NUMBER .)
+    SPHERE          reduce using rule 63 (command -> FOCAL NUMBER .)
+    TORUS           reduce using rule 63 (command -> FOCAL NUMBER .)
+    BOX             reduce using rule 63 (command -> FOCAL NUMBER .)
+    LINE            reduce using rule 63 (command -> FOCAL NUMBER .)
+    MOVE            reduce using rule 63 (command -> FOCAL NUMBER .)
+    SCALE           reduce using rule 63 (command -> FOCAL NUMBER .)
+    ROTATE          reduce using rule 63 (command -> FOCAL NUMBER .)
+    FRAMES          reduce using rule 63 (command -> FOCAL NUMBER .)
+    BASENAME        reduce using rule 63 (command -> FOCAL NUMBER .)
+    VARY            reduce using rule 63 (command -> FOCAL NUMBER .)
+    SET             reduce using rule 63 (command -> FOCAL NUMBER .)
+    SET_KNOBS       reduce using rule 63 (command -> FOCAL NUMBER .)
+    AMBIENT         reduce using rule 63 (command -> FOCAL NUMBER .)
+    CONSTANTS       reduce using rule 63 (command -> FOCAL NUMBER .)
+    LIGHT           reduce using rule 63 (command -> FOCAL NUMBER .)
+    SHADING         reduce using rule 63 (command -> FOCAL NUMBER .)
+    CAMERA          reduce using rule 63 (command -> FOCAL NUMBER .)
+    GENERATE_RAYFILES reduce using rule 63 (command -> FOCAL NUMBER .)
+    MESH            reduce using rule 63 (command -> FOCAL NUMBER .)
+    SAVE_KNOBS      reduce using rule 63 (command -> FOCAL NUMBER .)
+    SAVE_COORDS     reduce using rule 63 (command -> FOCAL NUMBER .)
+    TWEEN           reduce using rule 63 (command -> FOCAL NUMBER .)
+    FOCAL           reduce using rule 63 (command -> FOCAL NUMBER .)
+    WEB             reduce using rule 63 (command -> FOCAL NUMBER .)
+    TEXTURE         reduce using rule 63 (command -> FOCAL NUMBER .)
+    $end            reduce using rule 63 (command -> FOCAL NUMBER .)
 
 
 state 69
 
-    (64) command -> TEXTURE SYMBOL . NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
+    (65) command -> TEXTURE SYMBOL . NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
     (8) NUMBER -> . DOUBLE
 
     DOUBLE          shift and go to state 36
@@ -1901,6 +1908,7 @@ state 86
 state 87
 
     (51) command -> LIGHT SYMBOL NUMBER . NUMBER NUMBER NUMBER NUMBER NUMBER
+    (52) command -> LIGHT SYMBOL NUMBER . NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL
     (8) NUMBER -> . DOUBLE
 
     DOUBLE          shift and go to state 36
@@ -1909,7 +1917,7 @@ state 87
 
 state 88
 
-    (53) command -> CAMERA NUMBER NUMBER . NUMBER NUMBER NUMBER NUMBER
+    (54) command -> CAMERA NUMBER NUMBER . NUMBER NUMBER NUMBER NUMBER
     (8) NUMBER -> . DOUBLE
 
     DOUBLE          shift and go to state 36
@@ -1918,43 +1926,43 @@ state 88
 
 state 89
 
-    (55) command -> MESH CO TEXT .
-    (57) command -> MESH CO TEXT . SYMBOL
+    (56) command -> MESH CO TEXT .
+    (58) command -> MESH CO TEXT . SYMBOL
     (4) SYMBOL -> . XYZ
     (5) SYMBOL -> . ID
 
-    COMMENT         reduce using rule 55 (command -> MESH CO TEXT .)
-    POP             reduce using rule 55 (command -> MESH CO TEXT .)
-    PUSH            reduce using rule 55 (command -> MESH CO TEXT .)
-    SCREEN          reduce using rule 55 (command -> MESH CO TEXT .)
-    SAVE            reduce using rule 55 (command -> MESH CO TEXT .)
-    DISPLAY         reduce using rule 55 (command -> MESH CO TEXT .)
-    SPHERE          reduce using rule 55 (command -> MESH CO TEXT .)
-    TORUS           reduce using rule 55 (command -> MESH CO TEXT .)
-    BOX             reduce using rule 55 (command -> MESH CO TEXT .)
-    LINE            reduce using rule 55 (command -> MESH CO TEXT .)
-    MOVE            reduce using rule 55 (command -> MESH CO TEXT .)
-    SCALE           reduce using rule 55 (command -> MESH CO TEXT .)
-    ROTATE          reduce using rule 55 (command -> MESH CO TEXT .)
-    FRAMES          reduce using rule 55 (command -> MESH CO TEXT .)
-    BASENAME        reduce using rule 55 (command -> MESH CO TEXT .)
-    VARY            reduce using rule 55 (command -> MESH CO TEXT .)
-    SET             reduce using rule 55 (command -> MESH CO TEXT .)
-    SET_KNOBS       reduce using rule 55 (command -> MESH CO TEXT .)
-    AMBIENT         reduce using rule 55 (command -> MESH CO TEXT .)
-    CONSTANTS       reduce using rule 55 (command -> MESH CO TEXT .)
-    LIGHT           reduce using rule 55 (command -> MESH CO TEXT .)
-    SHADING         reduce using rule 55 (command -> MESH CO TEXT .)
-    CAMERA          reduce using rule 55 (command -> MESH CO TEXT .)
-    GENERATE_RAYFILES reduce using rule 55 (command -> MESH CO TEXT .)
-    MESH            reduce using rule 55 (command -> MESH CO TEXT .)
-    SAVE_KNOBS      reduce using rule 55 (command -> MESH CO TEXT .)
-    SAVE_COORDS     reduce using rule 55 (command -> MESH CO TEXT .)
-    TWEEN           reduce using rule 55 (command -> MESH CO TEXT .)
-    FOCAL           reduce using rule 55 (command -> MESH CO TEXT .)
-    WEB             reduce using rule 55 (command -> MESH CO TEXT .)
-    TEXTURE         reduce using rule 55 (command -> MESH CO TEXT .)
-    $end            reduce using rule 55 (command -> MESH CO TEXT .)
+    COMMENT         reduce using rule 56 (command -> MESH CO TEXT .)
+    POP             reduce using rule 56 (command -> MESH CO TEXT .)
+    PUSH            reduce using rule 56 (command -> MESH CO TEXT .)
+    SCREEN          reduce using rule 56 (command -> MESH CO TEXT .)
+    SAVE            reduce using rule 56 (command -> MESH CO TEXT .)
+    DISPLAY         reduce using rule 56 (command -> MESH CO TEXT .)
+    SPHERE          reduce using rule 56 (command -> MESH CO TEXT .)
+    TORUS           reduce using rule 56 (command -> MESH CO TEXT .)
+    BOX             reduce using rule 56 (command -> MESH CO TEXT .)
+    LINE            reduce using rule 56 (command -> MESH CO TEXT .)
+    MOVE            reduce using rule 56 (command -> MESH CO TEXT .)
+    SCALE           reduce using rule 56 (command -> MESH CO TEXT .)
+    ROTATE          reduce using rule 56 (command -> MESH CO TEXT .)
+    FRAMES          reduce using rule 56 (command -> MESH CO TEXT .)
+    BASENAME        reduce using rule 56 (command -> MESH CO TEXT .)
+    VARY            reduce using rule 56 (command -> MESH CO TEXT .)
+    SET             reduce using rule 56 (command -> MESH CO TEXT .)
+    SET_KNOBS       reduce using rule 56 (command -> MESH CO TEXT .)
+    AMBIENT         reduce using rule 56 (command -> MESH CO TEXT .)
+    CONSTANTS       reduce using rule 56 (command -> MESH CO TEXT .)
+    LIGHT           reduce using rule 56 (command -> MESH CO TEXT .)
+    SHADING         reduce using rule 56 (command -> MESH CO TEXT .)
+    CAMERA          reduce using rule 56 (command -> MESH CO TEXT .)
+    GENERATE_RAYFILES reduce using rule 56 (command -> MESH CO TEXT .)
+    MESH            reduce using rule 56 (command -> MESH CO TEXT .)
+    SAVE_KNOBS      reduce using rule 56 (command -> MESH CO TEXT .)
+    SAVE_COORDS     reduce using rule 56 (command -> MESH CO TEXT .)
+    TWEEN           reduce using rule 56 (command -> MESH CO TEXT .)
+    FOCAL           reduce using rule 56 (command -> MESH CO TEXT .)
+    WEB             reduce using rule 56 (command -> MESH CO TEXT .)
+    TEXTURE         reduce using rule 56 (command -> MESH CO TEXT .)
+    $end            reduce using rule 56 (command -> MESH CO TEXT .)
     XYZ             shift and go to state 40
     ID              shift and go to state 41
 
@@ -1962,8 +1970,8 @@ state 89
 
 state 90
 
-    (56) command -> MESH SYMBOL CO . TEXT
-    (58) command -> MESH SYMBOL CO . TEXT SYMBOL
+    (57) command -> MESH SYMBOL CO . TEXT
+    (59) command -> MESH SYMBOL CO . TEXT SYMBOL
     (6) TEXT -> . SYMBOL
     (7) TEXT -> . STRING
     (4) SYMBOL -> . XYZ
@@ -1978,7 +1986,7 @@ state 90
 
 state 91
 
-    (61) command -> TWEEN NUMBER NUMBER . SYMBOL SYMBOL
+    (62) command -> TWEEN NUMBER NUMBER . SYMBOL SYMBOL
     (4) SYMBOL -> . XYZ
     (5) SYMBOL -> . ID
 
@@ -1989,7 +1997,7 @@ state 91
 
 state 92
 
-    (64) command -> TEXTURE SYMBOL NUMBER . NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
+    (65) command -> TEXTURE SYMBOL NUMBER . NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
     (8) NUMBER -> . DOUBLE
 
     DOUBLE          shift and go to state 36
@@ -2313,6 +2321,7 @@ state 107
 state 108
 
     (51) command -> LIGHT SYMBOL NUMBER NUMBER . NUMBER NUMBER NUMBER NUMBER
+    (52) command -> LIGHT SYMBOL NUMBER NUMBER . NUMBER NUMBER NUMBER NUMBER SYMBOL
     (8) NUMBER -> . DOUBLE
 
     DOUBLE          shift and go to state 36
@@ -2321,7 +2330,7 @@ state 108
 
 state 109
 
-    (53) command -> CAMERA NUMBER NUMBER NUMBER . NUMBER NUMBER NUMBER
+    (54) command -> CAMERA NUMBER NUMBER NUMBER . NUMBER NUMBER NUMBER
     (8) NUMBER -> . DOUBLE
 
     DOUBLE          shift and go to state 36
@@ -2330,81 +2339,81 @@ state 109
 
 state 110
 
-    (57) command -> MESH CO TEXT SYMBOL .
+    (58) command -> MESH CO TEXT SYMBOL .
 
-    COMMENT         reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    POP             reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    PUSH            reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    SCREEN          reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    SAVE            reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    DISPLAY         reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    SPHERE          reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    TORUS           reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    BOX             reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    LINE            reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    MOVE            reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    SCALE           reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    ROTATE          reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    FRAMES          reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    BASENAME        reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    VARY            reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    SET             reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    SET_KNOBS       reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    AMBIENT         reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    CONSTANTS       reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    LIGHT           reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    SHADING         reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    CAMERA          reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    GENERATE_RAYFILES reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    MESH            reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    SAVE_KNOBS      reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    SAVE_COORDS     reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    TWEEN           reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    FOCAL           reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    WEB             reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    TEXTURE         reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
-    $end            reduce using rule 57 (command -> MESH CO TEXT SYMBOL .)
+    COMMENT         reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    POP             reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    PUSH            reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    SCREEN          reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    SAVE            reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    DISPLAY         reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    SPHERE          reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    TORUS           reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    BOX             reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    LINE            reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    MOVE            reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    SCALE           reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    ROTATE          reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    FRAMES          reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    BASENAME        reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    VARY            reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    SET             reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    SET_KNOBS       reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    AMBIENT         reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    CONSTANTS       reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    LIGHT           reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    SHADING         reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    CAMERA          reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    GENERATE_RAYFILES reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    MESH            reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    SAVE_KNOBS      reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    SAVE_COORDS     reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    TWEEN           reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    FOCAL           reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    WEB             reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    TEXTURE         reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
+    $end            reduce using rule 58 (command -> MESH CO TEXT SYMBOL .)
 
 
 state 111
 
-    (56) command -> MESH SYMBOL CO TEXT .
-    (58) command -> MESH SYMBOL CO TEXT . SYMBOL
+    (57) command -> MESH SYMBOL CO TEXT .
+    (59) command -> MESH SYMBOL CO TEXT . SYMBOL
     (4) SYMBOL -> . XYZ
     (5) SYMBOL -> . ID
 
-    COMMENT         reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    POP             reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    PUSH            reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    SCREEN          reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    SAVE            reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    DISPLAY         reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    SPHERE          reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    TORUS           reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    BOX             reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    LINE            reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    MOVE            reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    SCALE           reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    ROTATE          reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    FRAMES          reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    BASENAME        reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    VARY            reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    SET             reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    SET_KNOBS       reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    AMBIENT         reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    CONSTANTS       reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    LIGHT           reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    SHADING         reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    CAMERA          reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    GENERATE_RAYFILES reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    MESH            reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    SAVE_KNOBS      reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    SAVE_COORDS     reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    TWEEN           reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    FOCAL           reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    WEB             reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    TEXTURE         reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
-    $end            reduce using rule 56 (command -> MESH SYMBOL CO TEXT .)
+    COMMENT         reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    POP             reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    PUSH            reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    SCREEN          reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    SAVE            reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    DISPLAY         reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    SPHERE          reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    TORUS           reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    BOX             reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    LINE            reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    MOVE            reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    SCALE           reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    ROTATE          reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    FRAMES          reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    BASENAME        reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    VARY            reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    SET             reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    SET_KNOBS       reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    AMBIENT         reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    CONSTANTS       reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    LIGHT           reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    SHADING         reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    CAMERA          reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    GENERATE_RAYFILES reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    MESH            reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    SAVE_KNOBS      reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    SAVE_COORDS     reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    TWEEN           reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    FOCAL           reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    WEB             reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    TEXTURE         reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
+    $end            reduce using rule 57 (command -> MESH SYMBOL CO TEXT .)
     XYZ             shift and go to state 40
     ID              shift and go to state 41
 
@@ -2412,7 +2421,7 @@ state 111
 
 state 112
 
-    (61) command -> TWEEN NUMBER NUMBER SYMBOL . SYMBOL
+    (62) command -> TWEEN NUMBER NUMBER SYMBOL . SYMBOL
     (4) SYMBOL -> . XYZ
     (5) SYMBOL -> . ID
 
@@ -2423,7 +2432,7 @@ state 112
 
 state 113
 
-    (64) command -> TEXTURE SYMBOL NUMBER NUMBER . NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
+    (65) command -> TEXTURE SYMBOL NUMBER NUMBER . NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
     (8) NUMBER -> . DOUBLE
 
     DOUBLE          shift and go to state 36
@@ -2697,6 +2706,7 @@ state 127
 state 128
 
     (51) command -> LIGHT SYMBOL NUMBER NUMBER NUMBER . NUMBER NUMBER NUMBER
+    (52) command -> LIGHT SYMBOL NUMBER NUMBER NUMBER . NUMBER NUMBER NUMBER SYMBOL
     (8) NUMBER -> . DOUBLE
 
     DOUBLE          shift and go to state 36
@@ -2705,7 +2715,7 @@ state 128
 
 state 129
 
-    (53) command -> CAMERA NUMBER NUMBER NUMBER NUMBER . NUMBER NUMBER
+    (54) command -> CAMERA NUMBER NUMBER NUMBER NUMBER . NUMBER NUMBER
     (8) NUMBER -> . DOUBLE
 
     DOUBLE          shift and go to state 36
@@ -2714,83 +2724,83 @@ state 129
 
 state 130
 
-    (58) command -> MESH SYMBOL CO TEXT SYMBOL .
+    (59) command -> MESH SYMBOL CO TEXT SYMBOL .
 
-    COMMENT         reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    POP             reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    PUSH            reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    SCREEN          reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    SAVE            reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    DISPLAY         reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    SPHERE          reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    TORUS           reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    BOX             reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    LINE            reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    MOVE            reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    SCALE           reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    ROTATE          reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    FRAMES          reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    BASENAME        reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    VARY            reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    SET             reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    SET_KNOBS       reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    AMBIENT         reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    CONSTANTS       reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    LIGHT           reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    SHADING         reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    CAMERA          reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    GENERATE_RAYFILES reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    MESH            reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    SAVE_KNOBS      reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    SAVE_COORDS     reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    TWEEN           reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    FOCAL           reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    WEB             reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    TEXTURE         reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
-    $end            reduce using rule 58 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    COMMENT         reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    POP             reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    PUSH            reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    SCREEN          reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    SAVE            reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    DISPLAY         reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    SPHERE          reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    TORUS           reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    BOX             reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    LINE            reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    MOVE            reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    SCALE           reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    ROTATE          reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    FRAMES          reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    BASENAME        reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    VARY            reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    SET             reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    SET_KNOBS       reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    AMBIENT         reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    CONSTANTS       reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    LIGHT           reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    SHADING         reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    CAMERA          reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    GENERATE_RAYFILES reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    MESH            reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    SAVE_KNOBS      reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    SAVE_COORDS     reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    TWEEN           reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    FOCAL           reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    WEB             reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    TEXTURE         reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
+    $end            reduce using rule 59 (command -> MESH SYMBOL CO TEXT SYMBOL .)
 
 
 state 131
 
-    (61) command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .
+    (62) command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .
 
-    COMMENT         reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    POP             reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    PUSH            reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    SCREEN          reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    SAVE            reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    DISPLAY         reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    SPHERE          reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    TORUS           reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    BOX             reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    LINE            reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    MOVE            reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    SCALE           reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    ROTATE          reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    FRAMES          reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    BASENAME        reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    VARY            reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    SET             reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    SET_KNOBS       reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    AMBIENT         reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    CONSTANTS       reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    LIGHT           reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    SHADING         reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    CAMERA          reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    GENERATE_RAYFILES reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    MESH            reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    SAVE_KNOBS      reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    SAVE_COORDS     reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    TWEEN           reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    FOCAL           reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    WEB             reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    TEXTURE         reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
-    $end            reduce using rule 61 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    COMMENT         reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    POP             reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    PUSH            reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    SCREEN          reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    SAVE            reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    DISPLAY         reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    SPHERE          reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    TORUS           reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    BOX             reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    LINE            reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    MOVE            reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    SCALE           reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    ROTATE          reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    FRAMES          reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    BASENAME        reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    VARY            reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    SET             reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    SET_KNOBS       reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    AMBIENT         reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    CONSTANTS       reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    LIGHT           reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    SHADING         reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    CAMERA          reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    GENERATE_RAYFILES reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    MESH            reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    SAVE_KNOBS      reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    SAVE_COORDS     reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    TWEEN           reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    FOCAL           reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    WEB             reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    TEXTURE         reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
+    $end            reduce using rule 62 (command -> TWEEN NUMBER NUMBER SYMBOL SYMBOL .)
 
 
 state 132
 
-    (64) command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER . NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
+    (65) command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER . NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
     (8) NUMBER -> . DOUBLE
 
     DOUBLE          shift and go to state 36
@@ -3044,6 +3054,7 @@ state 144
 state 145
 
     (51) command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER . NUMBER NUMBER
+    (52) command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER . NUMBER NUMBER SYMBOL
     (8) NUMBER -> . DOUBLE
 
     DOUBLE          shift and go to state 36
@@ -3052,7 +3063,7 @@ state 145
 
 state 146
 
-    (53) command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER . NUMBER
+    (54) command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER . NUMBER
     (8) NUMBER -> . DOUBLE
 
     DOUBLE          shift and go to state 36
@@ -3061,7 +3072,7 @@ state 146
 
 state 147
 
-    (64) command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER . NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
+    (65) command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER . NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
     (8) NUMBER -> . DOUBLE
 
     DOUBLE          shift and go to state 36
@@ -3329,6 +3340,7 @@ state 157
 state 158
 
     (51) command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER . NUMBER
+    (52) command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER . NUMBER SYMBOL
     (8) NUMBER -> . DOUBLE
 
     DOUBLE          shift and go to state 36
@@ -3337,45 +3349,45 @@ state 158
 
 state 159
 
-    (53) command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .
+    (54) command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .
 
-    COMMENT         reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    POP             reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    PUSH            reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    SCREEN          reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    SAVE            reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    DISPLAY         reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    SPHERE          reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    TORUS           reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    BOX             reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    LINE            reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    MOVE            reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    SCALE           reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    ROTATE          reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    FRAMES          reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    BASENAME        reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    VARY            reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    SET             reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    SET_KNOBS       reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    AMBIENT         reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    CONSTANTS       reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    LIGHT           reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    SHADING         reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    CAMERA          reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    GENERATE_RAYFILES reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    MESH            reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    SAVE_KNOBS      reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    SAVE_COORDS     reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    TWEEN           reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    FOCAL           reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    WEB             reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    TEXTURE         reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    $end            reduce using rule 53 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    COMMENT         reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    POP             reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    PUSH            reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    SCREEN          reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    SAVE            reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    DISPLAY         reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    SPHERE          reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    TORUS           reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    BOX             reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    LINE            reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    MOVE            reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    SCALE           reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    ROTATE          reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    FRAMES          reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    BASENAME        reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    VARY            reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    SET             reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    SET_KNOBS       reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    AMBIENT         reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    CONSTANTS       reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    LIGHT           reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    SHADING         reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    CAMERA          reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    GENERATE_RAYFILES reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    MESH            reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    SAVE_KNOBS      reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    SAVE_COORDS     reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    TWEEN           reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    FOCAL           reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    WEB             reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    TEXTURE         reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    $end            reduce using rule 54 (command -> CAMERA NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
 
 
 state 160
 
-    (64) command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER . NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
+    (65) command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER . NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
     (8) NUMBER -> . DOUBLE
 
     DOUBLE          shift and go to state 36
@@ -3651,6 +3663,9 @@ state 168
 state 169
 
     (51) command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .
+    (52) command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER . SYMBOL
+    (4) SYMBOL -> . XYZ
+    (5) SYMBOL -> . ID
 
     COMMENT         reduce using rule 51 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
     POP             reduce using rule 51 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
@@ -3684,16 +3699,19 @@ state 169
     WEB             reduce using rule 51 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
     TEXTURE         reduce using rule 51 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
     $end            reduce using rule 51 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    XYZ             shift and go to state 40
+    ID              shift and go to state 41
 
+    SYMBOL                         shift and go to state 176
 
 state 170
 
-    (64) command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER . NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
+    (65) command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER . NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER
     (8) NUMBER -> . DOUBLE
 
     DOUBLE          shift and go to state 36
 
-    NUMBER                         shift and go to state 176
+    NUMBER                         shift and go to state 177
 
 state 171
 
@@ -3813,7 +3831,7 @@ state 173
     XYZ             shift and go to state 40
     ID              shift and go to state 41
 
-    SYMBOL                         shift and go to state 177
+    SYMBOL                         shift and go to state 178
 
 state 174
 
@@ -3861,18 +3879,56 @@ state 175
 
     DOUBLE          shift and go to state 36
 
-    NUMBER                         shift and go to state 178
+    NUMBER                         shift and go to state 179
 
 state 176
 
-    (64) command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER . NUMBER NUMBER NUMBER NUMBER NUMBER
+    (52) command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .
+
+    COMMENT         reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    POP             reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    PUSH            reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    SCREEN          reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    SAVE            reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    DISPLAY         reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    SPHERE          reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    TORUS           reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    BOX             reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    LINE            reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    MOVE            reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    SCALE           reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    ROTATE          reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    FRAMES          reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    BASENAME        reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    VARY            reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    SET             reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    SET_KNOBS       reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    AMBIENT         reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    CONSTANTS       reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    LIGHT           reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    SHADING         reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    CAMERA          reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    GENERATE_RAYFILES reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    MESH            reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    SAVE_KNOBS      reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    SAVE_COORDS     reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    TWEEN           reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    FOCAL           reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    WEB             reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    TEXTURE         reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+    $end            reduce using rule 52 (command -> LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL .)
+
+
+state 177
+
+    (65) command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER . NUMBER NUMBER NUMBER NUMBER NUMBER
     (8) NUMBER -> . DOUBLE
 
     DOUBLE          shift and go to state 36
 
-    NUMBER                         shift and go to state 179
+    NUMBER                         shift and go to state 180
 
-state 177
+state 178
 
     (34) command -> LINE SYMBOL NUMBER NUMBER NUMBER SYMBOL NUMBER NUMBER NUMBER SYMBOL .
 
@@ -3910,7 +3966,7 @@ state 177
     $end            reduce using rule 34 (command -> LINE SYMBOL NUMBER NUMBER NUMBER SYMBOL NUMBER NUMBER NUMBER SYMBOL .)
 
 
-state 178
+state 179
 
     (49) command -> CONSTANTS SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER . NUMBER
     (50) command -> CONSTANTS SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER . NUMBER NUMBER NUMBER NUMBER
@@ -3918,18 +3974,18 @@ state 178
 
     DOUBLE          shift and go to state 36
 
-    NUMBER                         shift and go to state 180
+    NUMBER                         shift and go to state 181
 
-state 179
+state 180
 
-    (64) command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER . NUMBER NUMBER NUMBER NUMBER
+    (65) command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER . NUMBER NUMBER NUMBER NUMBER
     (8) NUMBER -> . DOUBLE
 
     DOUBLE          shift and go to state 36
 
-    NUMBER                         shift and go to state 181
+    NUMBER                         shift and go to state 182
 
-state 180
+state 181
 
     (49) command -> CONSTANTS SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .
     (50) command -> CONSTANTS SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER . NUMBER NUMBER NUMBER
@@ -3969,20 +4025,11 @@ state 180
     $end            reduce using rule 49 (command -> CONSTANTS SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
     DOUBLE          shift and go to state 36
 
-    NUMBER                         shift and go to state 182
-
-state 181
-
-    (64) command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER . NUMBER NUMBER NUMBER
-    (8) NUMBER -> . DOUBLE
-
-    DOUBLE          shift and go to state 36
-
     NUMBER                         shift and go to state 183
 
 state 182
 
-    (50) command -> CONSTANTS SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER . NUMBER NUMBER
+    (65) command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER . NUMBER NUMBER NUMBER
     (8) NUMBER -> . DOUBLE
 
     DOUBLE          shift and go to state 36
@@ -3991,7 +4038,7 @@ state 182
 
 state 183
 
-    (64) command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER . NUMBER NUMBER
+    (50) command -> CONSTANTS SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER . NUMBER NUMBER
     (8) NUMBER -> . DOUBLE
 
     DOUBLE          shift and go to state 36
@@ -4000,7 +4047,7 @@ state 183
 
 state 184
 
-    (50) command -> CONSTANTS SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER . NUMBER
+    (65) command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER . NUMBER NUMBER
     (8) NUMBER -> . DOUBLE
 
     DOUBLE          shift and go to state 36
@@ -4009,7 +4056,7 @@ state 184
 
 state 185
 
-    (64) command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER . NUMBER
+    (50) command -> CONSTANTS SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER . NUMBER
     (8) NUMBER -> . DOUBLE
 
     DOUBLE          shift and go to state 36
@@ -4017,6 +4064,15 @@ state 185
     NUMBER                         shift and go to state 187
 
 state 186
+
+    (65) command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER . NUMBER
+    (8) NUMBER -> . DOUBLE
+
+    DOUBLE          shift and go to state 36
+
+    NUMBER                         shift and go to state 188
+
+state 187
 
     (50) command -> CONSTANTS SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .
 
@@ -4054,40 +4110,40 @@ state 186
     $end            reduce using rule 50 (command -> CONSTANTS SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
 
 
-state 187
+state 188
 
-    (64) command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .
+    (65) command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .
 
-    COMMENT         reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    POP             reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    PUSH            reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    SCREEN          reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    SAVE            reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    DISPLAY         reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    SPHERE          reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    TORUS           reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    BOX             reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    LINE            reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    MOVE            reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    SCALE           reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    ROTATE          reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    FRAMES          reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    BASENAME        reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    VARY            reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    SET             reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    SET_KNOBS       reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    AMBIENT         reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    CONSTANTS       reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    LIGHT           reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    SHADING         reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    CAMERA          reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    GENERATE_RAYFILES reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    MESH            reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    SAVE_KNOBS      reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    SAVE_COORDS     reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    TWEEN           reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    FOCAL           reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    WEB             reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    TEXTURE         reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
-    $end            reduce using rule 64 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    COMMENT         reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    POP             reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    PUSH            reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    SCREEN          reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    SAVE            reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    DISPLAY         reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    SPHERE          reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    TORUS           reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    BOX             reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    LINE            reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    MOVE            reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    SCALE           reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    ROTATE          reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    FRAMES          reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    BASENAME        reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    VARY            reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    SET             reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    SET_KNOBS       reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    AMBIENT         reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    CONSTANTS       reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    LIGHT           reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    SHADING         reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    CAMERA          reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    GENERATE_RAYFILES reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    MESH            reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    SAVE_KNOBS      reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    SAVE_COORDS     reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    TWEEN           reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    FOCAL           reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    WEB             reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    TEXTURE         reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
+    $end            reduce using rule 65 (command -> TEXTURE SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER .)
 

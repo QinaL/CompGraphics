@@ -75,7 +75,7 @@ def second_pass( commands, num_frames ):
     for command in commands:
         op = command['op']
         if op == 'set':
-            print(command)
+            # print(command)
             knob = command['knob']
             value = command['args'][0]
             specFrames = []
@@ -153,7 +153,7 @@ def run(filename):
                           'green': [0.2, 0.5, 0.5],
                           'blue': [0.2, 0.5, 0.5]}]
     reflect = '.white'
-    #print(symbols)
+    print(symbols)
 
     (name, num_frames) = first_pass(commands)
     frames = second_pass(commands, num_frames)
@@ -254,6 +254,12 @@ def run(filename):
                 matrix_mult( stack[-1], tmp )
                 stack[-1] = [ x[:] for x in tmp]
                 tmp = []
+            elif c == 'light':
+                print('light')
+                print(command)
+                if command['knob'] != None:
+                    print('vary!')
+
             elif c == 'push':
                 stack.append([x[:] for x in stack[-1]] )
             elif c == 'pop':

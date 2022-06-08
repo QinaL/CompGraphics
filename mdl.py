@@ -38,7 +38,8 @@ tokens = (
     "DISPLAY", 
     "SCREEN", 
     "WEB", 
-    "CO"
+    "CO", 
+    "GRADIENT"
 )
 
 reserved = {
@@ -79,7 +80,8 @@ reserved = {
     "setknobs" : "SET_KNOBS",
     "focal" : "FOCAL",
     "display" : "DISPLAY",
-    "web" : "WEB"
+    "web" : "WEB",
+    "gradient" : "GRADIENT"
 }
 
 t_ignore = " \t"
@@ -319,9 +321,12 @@ def p_command_constants(p):
     commands.append(cmd)
 
 def p_command_light(p):
-    "command : LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER"
-    symbols[p[2]] = ['light', {'location' : p[3:6], 'color' : p[6:]}]
-    cmd = {'op':p[1], 'args' : None, 'light' : p[2] }
+    """command : LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER 
+               | LIGHT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER SYMBOL"""
+    symbols[p[2]] = ['light', {'location' : p[3:6], 'color' : p[6:9]}]
+    cmd = {'op':p[1], 'args' : None, 'light' : p[2], 'knob': None }
+    if len(p) == 10:
+        cmd['knob'] = p[9]
     commands.append(cmd)
 
 def p_command_shading(p):
