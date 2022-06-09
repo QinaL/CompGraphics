@@ -37,8 +37,11 @@ def first_pass( commands ):
             name = command['args'][0]
         if op == 'vary':
             ifVary = True
+        if op == 'gradient':
+            ifVary = True
 
     #print(ifVary, ifFrames) 
+    #print(name)
 
     if ifVary and name == '':
         print("warning: empty basename, defaulted to anim")
@@ -46,6 +49,9 @@ def first_pass( commands ):
 
     if ifVary and not ifFrames:
         raise Exception('vary but no frames')
+
+    if ifFrames and not ifVary:
+        raise Exception('frames but not vary')
 
     if num_frames < 1:
         raise Exception('invalid frames')
@@ -116,6 +122,34 @@ def second_pass( commands, num_frames ):
             frames[startFrame][knob] = startValue
             for x in range(startFrame+1, endFrame +1):
                 frames[x][knob] = frames[x-1][knob]+diff
+        if op == "gradient":
+            print(command)
+            knob = command['knob']
+            startFrame = int(command['args'][0])
+            endFrame = int(command['args'][1])
+            if (endFrame <= startFrame):
+                raise Exception('gradient invalid frames range')
+            if (startFrame < 0):
+                raise Exception('vary invalid start frame')
+            '''
+            if (endFrame > num_frames):
+                raise Exception('vary invalid end frame')
+            '''
+
+            span = endFrame-startFrame
+
+            color = command['args'][2:]
+            diff = [0, 0, 0]
+            # [changeInR per frame, changeInG per frame, changeInB per frame]
+            for i in range(3):
+                diff[i] = int(color[i]/span)
+            #print(diff)
+            frames[startFrame][knob] = diff
+            for x in range(startFrame+1, endFrame+1):
+                val = [0, 0, 0]
+                for i in range(3):
+                    val[i] = frames[x-1][knob][i] + diff[i]
+                frames[x][knob] = val
     print(frames)
     return frames
 
