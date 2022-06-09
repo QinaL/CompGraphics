@@ -289,10 +289,18 @@ def run(filename):
                 stack[-1] = [ x[:] for x in tmp]
                 tmp = []
             elif c == 'light':
-                print('light')
                 print(command)
-                if command['knob'] != None:
+                knob = command['knob']
+                if knob != None:
                     print('vary!')
+                    diff = symbols[knob][1]
+                    light = symbols[command['light']][1]
+                    color = light['color']
+                    for i in range(3):
+                        color[i] += diff[i]
+                    print(diff)
+                    print(light)
+                    
 
             elif c == 'push':
                 stack.append([x[:] for x in stack[-1]] )
