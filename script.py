@@ -114,11 +114,7 @@ def second_pass( commands, num_frames ):
                 raise Exception('vary invalid end frame')
 
             diff = (endValue-startValue)/(endFrame-startFrame)
-            
-            '''
-            if knob in frames[startFrame-1].keys():
-                frames[startFrame][knob] = frames[startFrame-1][knob]
-            '''
+  
             frames[startFrame][knob] = startValue
             for x in range(startFrame+1, endFrame +1):
                 frames[x][knob] = frames[x-1][knob]+diff
@@ -131,25 +127,23 @@ def second_pass( commands, num_frames ):
                 raise Exception('gradient invalid frames range')
             if (startFrame < 0):
                 raise Exception('vary invalid start frame')
-            '''
             if (endFrame > num_frames):
                 raise Exception('vary invalid end frame')
-            '''
 
             span = endFrame-startFrame
-
-            color = command['args'][2:]
-            diff = [0, 0, 0]
-            # [changeInR per frame, changeInG per frame, changeInB per frame]
-            for i in range(3):
-                diff[i] = int(color[i]/span)
+            light = command['args'][2:]
+            diff = [0, 0, 0, 0, 0, 0]
+            # [chnageInX, chnageInY, chnageInZ, changeInR, changeInG, changeInB per frame]
+            for i in range(6):
+                diff[i] = int(light[i]/span)
             #print(diff)
             frames[startFrame][knob] = diff
             for x in range(startFrame+1, endFrame+1):
-                val = [0, 0, 0]
-                for i in range(3):
+                val = [0, 0, 0, 0, 0, 0]
+                for i in range(6):
                     val[i] = frames[x-1][knob][i] + diff[i]
                 frames[x][knob] = val
+
     print(frames)
     return frames
 
@@ -295,9 +289,11 @@ def run(filename):
                     print('vary!')
                     diff = symbols[knob][1]
                     light = symbols[command['light']][1]
+                    location = light['location']
                     color = light['color']
                     for i in range(3):
-                        color[i] += diff[i]
+                        location[i] += diff[i]
+                        color[i] += diff[i+3]
                     print(diff)
                     print(light)
                     

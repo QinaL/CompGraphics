@@ -97,8 +97,9 @@ vary knob start_frame end_frame start_val end_val
 			  the course of start_frame to end_frame
 setknobs value		- set all the knobs to value
 
-gradient knob startframe endframe changeInR changeInG changeInB
-			- a knob for light that changes r,g,b based on given values
+gradient knob startframe endframe changeInX changeInY changeInZ changeInR changeInG changeInB
+			- a knob for light that changes x,y,z location and 
+			  r,g,b values based on given parameters
 			  over the span of the specified frame range
 
 
