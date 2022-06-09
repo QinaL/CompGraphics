@@ -97,13 +97,18 @@ vary knob start_frame end_frame start_val end_val
 			  the course of start_frame to end_frame
 setknobs value		- set all the knobs to value
 
+gradient knob startframe endframe changeInR changeInG changeInB
+			- a knob for light that changes r,g,b based on given values
+			  over the span of the specified frame range
+
 
 Lighting
 --------
 light r g b x y z  	- creates a "light" datastructure with rgb values
 			  r,g,b at location x,y,z.
 			  This is inserted into the symbol table.
-light symbol x y x r b g
+light symbol x y z r b g
+light symbol x y z r g b [knob] - optional knob changes r,g,b 
 
 ambient r g b 		- specifies how much ambient light is in the scene
 
