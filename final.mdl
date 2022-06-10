@@ -14,7 +14,7 @@ sphere orange 0 0 0 100
 // rotate obj
 pop
 push
-move 480 400 -200 across
+move 500 400 -200 across
 sphere 0 0 200 50
 pop 
 // stars
