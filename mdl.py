@@ -305,6 +305,7 @@ def p_command_knobs(p):
     else:
         cmd['args'].append(p[2])
         #print("heree")
+    symbols[p[2]] = ['knob', 0]
     commands.append(cmd)
 
 def p_command_ambient(p):

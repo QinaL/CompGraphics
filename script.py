@@ -286,7 +286,6 @@ def run(filename):
                 print(command)
                 knob = command['knob']
                 if knob != None:
-                    print('vary!')
                     diff = symbols[knob][1]
                     light = symbols[command['light']][1]
                     location = light['location']
