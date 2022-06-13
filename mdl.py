@@ -334,7 +334,7 @@ def p_command_gradient(p):
     "command : GRADIENT SYMBOL NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER NUMBER"
     # gradient knob startframe endframe chnageInX changeInY chnageInZ chnageinr chnageing chnageinb
     cmd = {'op':p[1], 'args': p[3:], 'knob': p[2]}
-    symbols[p[2]]= ['light knob', [0, 0, 0]]
+    symbols[p[2]]= ['light knob', [0, 0, 0, 0, 0, 0]]
     commands.append(cmd)
 
 def p_command_shading(p):
