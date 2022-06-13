@@ -135,7 +135,7 @@ def second_pass( commands, num_frames ):
             diff = [0, 0, 0, 0, 0, 0]
             # [chnageInX, chnageInY, chnageInZ, changeInR, changeInG, changeInB per frame]
             for i in range(6):
-                diff[i] = int(light[i]/span)
+                diff[i] = float(light[i]/span)
             #print(diff)
             frames[startFrame][knob] = diff
             for x in range(startFrame+1, endFrame+1):
