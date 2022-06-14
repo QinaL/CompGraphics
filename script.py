@@ -141,7 +141,7 @@ def second_pass( commands, num_frames ):
             for x in range(startFrame+1, endFrame+1):
                 val = [0, 0, 0, 0, 0, 0]
                 for i in range(6):
-                    val[i] = frames[x-1][knob][i] + diff[i]
+                    val[i] = diff[i]
                 frames[x][knob] = val
 
     print(frames)
@@ -195,7 +195,7 @@ def run(filename):
             #print(frames[x])
             symbols[knob][1] = frames[x][knob]
             #print(frames[x][knob])
-        #print(symbols)
+        print(symbols)
 
 
         tmp = new_matrix()
@@ -293,7 +293,7 @@ def run(filename):
                     for i in range(3):
                         location[i] += diff[i]
                         color[i] += diff[i+3]
-                    print(diff)
+                    print("diff",diff)
                     print(light)
                     
 
