@@ -1,13 +1,12 @@
-frames 120
-basename final
+frames 300
+basename finaly
 
 constants orange 0.5 0.5 0.5 34.1 34.1 34.1 12.8 12.8 12.8
 constants dull_yellow 0.3 0.8 0.2 0.3 0.8 0.2 0 0 0
 constants green 0 0 0 0.5 0.5 0.7 0 0 0 
 
 light mid 0.5 0.5 1 0 0 255 change
-light bottom -0.5 -0.75 -1 255 255 0 up
-light backlight 0.75 0.5 -1 255 255 255 down
+light bottom -0.5 -0.75 -1 255 0 0 up
 
 // 'sun' in middle 
 push
@@ -17,7 +16,7 @@ sphere orange 0 0 0 100
 pop
 push
 move 600 400 0 across
-sphere 0 0 300 50
+sphere -50 -50 300 50
 pop
 push 
 move 600 400 0 back 
@@ -37,19 +36,21 @@ sphere green 400 400 400 10
 sphere green 25 450 -100 20
 sphere green 300 110 0 30
 
-gradient down 0 19 0 0 0 -255 -255 -255 
-gradient up 0 19 0 0 0 0 0 255
-gradient up 20 50 50 20 10 0 0 0
+gradient up 20 290 50 20 10 0 0 0
 
-gradient change 30 89 0 0 0 255 192 -52
-gradient change 90 110 0 0 0 -255 -192 52  
-vary across 20 69 0 1
-vary back 71 119 1 0
-vary small 20 45 0 1
-vary big 46 69 0 1
+gradient change 30 149 0 0 0 255 192 -52
+gradient change 149 289 0 0 0 -255 -192 52  
+
+vary across 0 149 0 1
+vary back 150 299 1 0
+vary small 20 120 0 1
+vary big 120 265 0 1
+set big 2 290
+
 set appear 1 40 49 
 set appear 1 55 69  
-set appear 1.5 87 90
+set appear 1 87 90
 set appear 1 94 99 
-set appear 1.5 101 104  
-
+set appear 1 101 104  
+set appear 1 150 201
+set appear 1 250 290
